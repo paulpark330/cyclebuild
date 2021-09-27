@@ -9,11 +9,18 @@
   font-style: italic;
   letter-spacing: 2px;
   margin-top: 1rem;
+  user-select: none;
 }
 
 .nav-items {
   width: 185px;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.nav-items a {
   font-size: 0.8rem;
   font-weight: 500;
-  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
 }

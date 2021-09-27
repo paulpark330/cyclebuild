@@ -1,27 +1,33 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { MaterialModule } from './shared/material.module';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { BannerComponent } from './components/banner/banner.component';
+import { NgModule } from '@angular/core';
+
+import { RouterModule, Routes } from '@angular/router';
+
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  {
+    path: 'cyclebuild',
+    loadChildren: () =>
+      import('./cyclebuild/cyclebuild.module').then((m) => m.CyclebuildModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'cyclebuild/home',
+  },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ToolbarComponent,
-    BannerComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
