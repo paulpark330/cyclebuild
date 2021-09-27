@@ -37,8 +37,12 @@
   letter-spacing: 2px;
 }
 
-.about-us {
+.home-content {
   margin: 2rem 8rem;
+}
+
+.about-us {
+  display: flex;
   justify-content: space-between;
 }
 
