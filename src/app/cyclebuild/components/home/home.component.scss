@@ -38,12 +38,13 @@
 }
 
 .about-us {
-  padding: 2rem 4rem;
+  margin: 2rem 8rem;
   justify-content: space-between;
 }
 
 .about-us-text {
-  flex-basis: 60%
+  flex-basis: 60%;
+  padding-right: 1rem;
 }
 
 .about-us-text h3 {
@@ -60,8 +61,13 @@
   margin-bottom: 2rem;
 }
 
+.about-us-text p {
+  max-width: 80%;
+}
+
 .about-us-image {
   flex-basis: 40%;
+  padding-left: 1rem;
 }
 
 .about-us-image img {
