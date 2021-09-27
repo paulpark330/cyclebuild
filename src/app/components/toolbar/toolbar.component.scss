@@ -1,0 +1,19 @@
+.navbar {
+  flex-direction: column;
+  background-color: white;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+.nav-items {
+  width: 185px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  justify-content: space-between;
+}
