@@ -2,11 +2,32 @@
   margin: 2rem 8rem;
 }
 
+.bicycles-container h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+}
+
+.bicycles-container h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 .bicycles-content {
   display: flex;
   justify-content: space-between;
 }
 
 .bicycle {
+  flex-basis: 40%;
+}
 
+.bicycle img {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+  padding: 1rem;
 }

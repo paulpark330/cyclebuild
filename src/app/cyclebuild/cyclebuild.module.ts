@@ -43,6 +43,7 @@ const routes: Routes = [
     ToolbarComponent,
     PartsComponent,
     HomeComponent,
+    BicyclesComponent
   ],
   imports: [
     CommonModule,

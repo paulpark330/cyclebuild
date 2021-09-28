@@ -1,0 +1,33 @@
+.parts-container {
+  margin: 2rem 8rem;
+}
+
+.parts-container h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+}
+
+.parts-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.part img {
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+  object-fit: contain;
+  width: 6rem;
+  height: 6rem;
+}
