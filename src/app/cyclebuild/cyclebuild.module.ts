@@ -11,6 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BicyclesComponent } from './components/bicycles/bicycles.component';
 import { PartsComponent } from './components/parts/parts.component';
 import { HomeComponent } from './components/home/home.component';
+import { BicycleService } from './services/bicycle.service';
+import { PartService } from './services/part.service';
 
 const routes: Routes = [
   {
@@ -38,6 +40,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    MaterialModule,
+    RouterModule.forChild(routes)
+  ],
+  providers: [
+    BicycleService,
+    PartService
+  ],
   declarations: [
     CyclebuildAppComponent,
     ToolbarComponent,
@@ -45,11 +57,5 @@ const routes: Routes = [
     HomeComponent,
     BicyclesComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    MaterialModule,
-    RouterModule.forChild(routes)
-  ]
 })
 export class CyclebuildModule { }

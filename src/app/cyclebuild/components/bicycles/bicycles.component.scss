@@ -7,7 +7,7 @@
   font-weight: 500;
   font-style: italic;
   letter-spacing: 2px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .bicycles-container h3 {
@@ -18,11 +18,11 @@
 
 .bicycles-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .bicycle {
-  flex-basis: 40%;
+  flex-basis: 80%;
 }
 
 .bicycle img {

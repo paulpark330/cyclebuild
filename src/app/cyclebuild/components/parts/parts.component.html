@@ -1,13 +1,10 @@
 <div class="parts-container">
-  <h1>PARTS</h1>
-  <div class="parts-content">
+  <h1 *ngIf="router.url === '/cyclebuild/parts'">PARTS</h1>
+  <h3 *ngIf="router.url === '/cyclebuild'">SUGGESTED PARTS</h3>
+  <div *ngFor="let part of parts | async" class="parts-content">
     <div class="part">
-      <img src="../../../../assets/bicycle-part-1.png" alt="" />
-      <h2>Bicycle Part 1</h2>
-    </div>
-    <div class="part">
-      <img src="../../../../assets/bicycle-part-2.png" alt="" />
-      <h2>Bicycle Part 2</h2>
+      <img src="{{part.imageUrl[0]}}" alt="" />
+      <h2>{{part.name}}</h2>
     </div>
   </div>
 </div>
