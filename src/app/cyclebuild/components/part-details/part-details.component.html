@@ -1,9 +1,11 @@
 <div *ngIf="part" class="container">
   <div class="part-details-content">
-    <mat-grid-list cols="2" rowHeight="250px" gutterSize="5px">
+    <mat-grid-list cols="2" rowHeight="250px" gutterSize="4rem">
       <mat-grid-tile colspan="1" rowspan="2">
         <div class="part-carousel">
-          <img src="{{part.imageUrl[0]}}" alt="">
+          <div class="part-carousel-image">
+            <img src="{{part.imageUrl[0]}}" alt="">
+          </div>
           <div class="part-carousel-icons">
             <mat-icon>chevron_left</mat-icon>
             <mat-icon class="icon-circle">circle</mat-icon>

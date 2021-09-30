@@ -24,14 +24,23 @@ mat-grid-tile {
   align-items: center;
 }
 
+.part-carousel-image {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .part-carousel img {
-  width: 80%;
+  width: 100%;
 }
 
 .part-carousel-icons {
+  margin-top: 3rem;
+  length: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .icon-circle {
