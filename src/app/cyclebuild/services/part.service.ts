@@ -19,6 +19,10 @@ export class PartService {
     return this._parts.asObservable();
   }
 
+  partById(id: string) {
+    return this.dataStore.parts.find(x => x._id == id)
+  }
+
   loadAll() {
     const partsUrl = 'http://localhost:3000/part';
     return this.http.get<Part[]>(partsUrl).subscribe((data) => {

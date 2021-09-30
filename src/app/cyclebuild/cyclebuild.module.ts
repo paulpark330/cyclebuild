@@ -13,6 +13,8 @@ import { PartsComponent } from './components/parts/parts.component';
 import { HomeComponent } from './components/home/home.component';
 import { BicycleService } from './services/bicycle.service';
 import { PartService } from './services/part.service';
+import { BicycleDetailsComponent } from './components/bicycle-details/bicycle-details.component';
+import { PartDetailsComponent } from './components/part-details/part-details.component';
 
 const routes: Routes = [
   {
@@ -24,8 +26,16 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
+        path: 'bicycles/:id',
+        component: BicycleDetailsComponent,
+      },
+      {
         path: 'bicycles',
         component: BicyclesComponent,
+      },
+      {
+        path: 'parts/:id',
+        component: PartDetailsComponent,
       },
       {
         path: 'parts',
@@ -55,7 +65,9 @@ const routes: Routes = [
     ToolbarComponent,
     PartsComponent,
     HomeComponent,
-    BicyclesComponent
+    BicyclesComponent,
+    BicycleDetailsComponent,
+    PartDetailsComponent
   ],
 })
 export class CyclebuildModule { }

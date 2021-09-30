@@ -2,7 +2,7 @@
   <h1 *ngIf="router.url === '/cyclebuild/parts'">PARTS</h1>
   <h3 *ngIf="router.url === '/cyclebuild'">SUGGESTED PARTS</h3>
   <div *ngFor="let part of parts | async" class="parts-content">
-    <div class="part">
+    <div [routerLink]="['/cyclebuild/parts', part._id]" class="part">
       <img src="{{part.imageUrl[0]}}" alt="" />
       <h2>{{part.name}}</h2>
     </div>

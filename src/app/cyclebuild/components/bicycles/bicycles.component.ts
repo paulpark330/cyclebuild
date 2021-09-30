@@ -18,7 +18,7 @@ export class BicyclesComponent implements OnInit {
     this.bicycles = this.bicycleService.bicycles;
     this.bicycleService.loadAll();
     this.bicycles.subscribe((data) => {
-      console.log(data);
+
     });
   }
 }

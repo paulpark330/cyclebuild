@@ -19,6 +19,10 @@ export class BicycleService {
     return this._bicycles.asObservable();
   }
 
+  bicycleById(id: string) {
+    return this.dataStore.bicycles.find(x => x._id == id)
+  }
+
   loadAll() {
     const bicyclesUrl = 'http://localhost:3000/bicycle';
     return this.http.get<Bicycle[]>(bicyclesUrl).subscribe(

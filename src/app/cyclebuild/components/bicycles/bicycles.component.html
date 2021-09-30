@@ -3,7 +3,7 @@
   <h3>YOUR BICYCLES</h3>
   <div class="bicycles-content">
     <div *ngFor="let bicycle of bicycles | async" class="bicycles-content">
-      <div class="bicycle">
+      <div [routerLink]="['/cyclebuild/bicycles', bicycle._id]" class="bicycle">
         <img src="{{ bicycle.imageUrl[0] }}" alt="{{ bicycle.name }}" />
         <h2>{{ bicycle.name }}</h2>
       </div>
