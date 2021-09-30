@@ -14,7 +14,6 @@ module.exports = [
         const bicycle = await Bicycle.find().exec();
         return h.response(bicycle);
       } catch (error) {
-        console.log('placeholder alksjf;alsdjf;alskdjf;asdfjsdfhkjh')
         console.log(error);
         return h.response(error).code(500);
       }

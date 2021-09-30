@@ -1,0 +1,62 @@
+.container {
+  width: 100vw;
+  height: 80vh;
+  margin-top: 2rem;
+  padding-top: 4rem;
+  border: 1px solid black;
+}
+
+.part-details-content {
+  margin: 0rem auto;
+  width: 70%;
+}
+
+.mat-grid-tile-content {
+  align-items: flex-start;
+}
+
+mat-grid-tile {
+  border: 1px solid black;
+
+}
+
+.part-details-content-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-end;
+}
+
+.part-name {
+  margin-bottom: 2rem;
+}
+
+.part-button {
+  margin-bottom: 1rem;
+}
+
+.part-button button {
+  background-color: #36A0ED;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.part-description {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.part-description p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.part-compatibility {
+  margin-top: 2rem
+}
+
+.part-compatibility p {
+  font-weight: 700;
+}

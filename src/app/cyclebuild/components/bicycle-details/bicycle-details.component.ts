@@ -11,6 +11,7 @@ import { BicycleService } from '../../services/bicycle.service';
 export class BicycleDetailsComponent implements OnInit {
   bicycle: Bicycle | undefined;
 
+
   constructor(private route: ActivatedRoute, private service: BicycleService) {}
 
   ngOnInit(): void {

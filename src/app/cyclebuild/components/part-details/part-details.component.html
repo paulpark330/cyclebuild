@@ -1,1 +1,29 @@
-<p>part-details works!</p>
+<div *ngIf="part" class="container">
+  <div class="part-details-content">
+    <mat-grid-list cols="2" rowHeight="250px" gutterSize="5px">
+      <mat-grid-tile colspan="1" rowspan="2">1</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="2">
+        <div class="part-details-content-text">
+          <div class="part-name">
+            <h2>{{ part.name }}</h2>
+          </div>
+          <div class="part-button">
+            <button mat-flat-button>Add to Vehicle</button>
+          </div>
+          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+          <div class="part-description">
+            <p>{{ part.description }}</p>
+          </div>
+          <div class="part-compatibility">
+            <p>Compatibility</p>
+            <ul>
+              <li *ngFor="let compatibility of part.compatibilities">
+                {{ compatibility }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
