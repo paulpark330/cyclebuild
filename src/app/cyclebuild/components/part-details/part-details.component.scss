@@ -1,13 +1,12 @@
 .container {
   width: 100vw;
-  height: 80vh;
+  height: 85vh;
   margin-top: 2rem;
-  padding-top: 4rem;
-  border: 1px solid black;
+  padding-top: 1rem;
 }
 
 .part-details-content {
-  margin: 0rem auto;
+  margin: 2rem auto;
   width: 70%;
 }
 
@@ -16,8 +15,30 @@
 }
 
 mat-grid-tile {
-  border: 1px solid black;
+    // border: 1px solid #e5e5e5;
+}
 
+.part-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.part-carousel img {
+  width: 80%;
+}
+
+.part-carousel-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
 }
 
 .part-details-content-text {
