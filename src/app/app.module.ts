@@ -26,6 +26,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+
   ],
   providers: [],
   bootstrap: [AppComponent],

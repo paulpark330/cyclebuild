@@ -15,6 +15,9 @@ import { BicycleService } from './services/bicycle.service';
 import { PartService } from './services/part.service';
 import { BicycleDetailsComponent } from './components/bicycle-details/bicycle-details.component';
 import { PartDetailsComponent } from './components/part-details/part-details.component';
+import { PartCarouselComponent } from './components/part-carousel/part-carousel.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 const routes: Routes = [
   {
@@ -54,7 +57,8 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     MaterialModule,
-    RouterModule.forChild(routes)
+    CarouselModule,
+    RouterModule.forChild(routes),
   ],
   providers: [
     BicycleService,
@@ -67,7 +71,8 @@ const routes: Routes = [
     HomeComponent,
     BicyclesComponent,
     BicycleDetailsComponent,
-    PartDetailsComponent
+    PartDetailsComponent,
+    PartCarouselComponent
   ],
 })
 export class CyclebuildModule { }

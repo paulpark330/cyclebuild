@@ -18,37 +18,14 @@ mat-grid-tile {
     // border: 1px solid #e5e5e5;
 }
 
-.part-carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// .carousel-container {
+//   display: block;
+//   height: 500px;
+//   width: 500px;
+//   padding: 2em;
+// }
 
-.part-carousel-image {
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.part-carousel img {
-  width: 100%;
-}
-
-.part-carousel-icons {
-  margin-top: 3rem;
-  length: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.icon-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.6rem;
-}
 
 .part-details-content-text {
   height: 100%;

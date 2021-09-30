@@ -1,0 +1,5 @@
+<carousel [interval]=0 [noWrap]="true">
+  <slide *ngFor="let image of part.imageUrl">
+    <img src="{{ image }}" alt="{{part.name}}" style="display: block; width: 100%;">
+  </slide>
+</carousel>
