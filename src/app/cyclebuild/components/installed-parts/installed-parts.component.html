@@ -1,0 +1,15 @@
+<div class="installed-parts-container">
+  <div class="bicycle-name">
+    <h2>{{ bicycle.name }}</h2>
+  </div>
+  <div class="installed-parts-text">
+    <h3>Installed Parts</h3>
+  </div>
+</div>
+
+<div *ngFor="let part of installedParts" role="listitem">
+  <div class="installed-part">
+    <img src="{{ part.imageUrl[0] }}" alt="" />
+    <span>{{ part.name }}</span>
+  </div>
+</div>

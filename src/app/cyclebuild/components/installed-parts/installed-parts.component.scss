@@ -1,0 +1,41 @@
+:host {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.installed-parts-container {
+  padding: 1rem;
+}
+
+.bicycle-name h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.installed-parts-text {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.installed-parts-text h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.installed-part {
+  display: flex;
+  align-items: center;
+}
+
+.installed-part img {
+  padding: 1rem;
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.installed-part span {
+  font-weight: 500;
+}
