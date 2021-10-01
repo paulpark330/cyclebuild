@@ -12,7 +12,7 @@
             <h2>{{ part.name }}</h2>
           </div>
           <div class="part-button">
-            <button mat-flat-button>Add to Vehicle</button>
+            <button (click)="openDialog($event)" mat-flat-button>Add to Vehicle</button>
           </div>
           <hr style="height:2px;border-width:0;color:gray;background-color:gray">
           <div class="part-description">

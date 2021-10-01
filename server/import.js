@@ -39,7 +39,6 @@ Part.insertMany([
 Bicycle.insertMany([
   {
     name: "Bicycle A",
-    installedParts: [],
     imageUrl: [
       "/assets/bicycle-a-1.png",
       "/assets/bicycle-a-2.png",
@@ -48,7 +47,6 @@ Bicycle.insertMany([
   },
   {
     name: "Bicycle B",
-    installedParts: [],
     imageUrl: [
       "/assets/bicycle-b-1.png",
       "/assets/bicycle-b-2.png",

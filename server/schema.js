@@ -10,7 +10,6 @@ const partSchema = new Schema({
 
 const bicycleSchema = new Schema({
   name: String,
-  installedParts: [String],
   imageUrl: [String],
 });
 

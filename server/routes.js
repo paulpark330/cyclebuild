@@ -62,7 +62,6 @@ module.exports = [
       validate: {
         payload: Joi.object({
           name: Joi.string().optional(),
-          installedParts: Joi.array().optional(),
           imageUrl: Joi.string().optional(),
         }),
         failAction: (request, h, error) => {

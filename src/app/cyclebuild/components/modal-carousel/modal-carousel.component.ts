@@ -18,6 +18,7 @@ export class ModalCarouselComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.imageUrl = this.data.part.imageUrl
     this.mainImage = this.data.currentImage;
   }
