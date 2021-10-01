@@ -17,7 +17,6 @@ export class ModalCompatibilityComponent implements OnInit {
     private bicycleService: BicycleService
   ) {}
 
-  isCompatible!: boolean;
   part!: Part;
   bicycles!: Observable<Bicycle[]>;
 
@@ -30,8 +29,13 @@ export class ModalCompatibilityComponent implements OnInit {
     this.bicycleService.loadAll();
     this.bicycles.subscribe((data) => {
       this.dataSource = new MatTableDataSource<Bicycle>(data);
+      console.log(data)
     });
     this.part = this.data.part;
+  }
+
+  checkCompatibility(bicycle: Bicycle, part: Part) {
+    return part.compatibilities.includes(bicycle.name)
   }
 
   applyFilter(event: Event) {
