@@ -36,6 +36,7 @@
 
 table {
   width: 100%;
+  margin-top: -3rem
 }
 
 .mat-form-field {
@@ -63,6 +64,7 @@ table {
 
 .table-bicycle {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -82,7 +84,6 @@ table {
 
 .table-compatibility {
   display: flex;
-  justify-content: flex-end;
 }
 
 .table-compatibility h4 {
@@ -90,8 +91,13 @@ table {
   margin-left: 0.4rem;
 }
 
-.green-icon {
-  color: #4bd493
+.compatible {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.compatible:hover {
+  transform: scale(1.05);
 }
 
 td.mat-cell {

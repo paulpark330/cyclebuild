@@ -27,6 +27,19 @@
 .installed-part {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.delete-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  transition: 0.2s;
+}
+
+.delete-button:hover {
+  transform: scale(1.2);
 }
 
 .installed-part img {

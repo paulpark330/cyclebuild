@@ -20,22 +20,35 @@ export class ModalCompatibilityComponent implements OnInit {
   part!: Part;
   bicycles!: Observable<Bicycle[]>;
 
-  displayedColumns: string[] = ['bicycle', 'compatibility'];
+  displayedColumns: string[] = ['bicycle'];
   dataSource!: MatTableDataSource<Bicycle>;
 
   ngOnInit(): void {
-    console.log(this.data);
     this.bicycles = this.bicycleService.bicycles;
     this.bicycleService.loadAll();
     this.bicycles.subscribe((data) => {
       this.dataSource = new MatTableDataSource<Bicycle>(data);
-      console.log(data)
     });
     this.part = this.data.part;
   }
 
+  addToBicycle(bicycle: Bicycle, part: Part) {
+    //get array of parts from local storage
+    //parse it
+    //check for duplicates array.some()
+    const partsJSON = localStorage.getItem(bicycle.name);
+    let partsArray: Part[] = [];
+    if (partsJSON !== null) {
+      partsArray = JSON.parse(partsJSON);
+    }
+    if (!partsArray.some((partJSON) => partJSON._id === part._id)) {
+      partsArray.push(part);
+    }
+    localStorage.setItem(bicycle.name, JSON.stringify(partsArray));
+  }
+
   checkCompatibility(bicycle: Bicycle, part: Part) {
-    return part.compatibilities.includes(bicycle.name)
+    return part.compatibilities.includes(bicycle.name);
   }
 
   applyFilter(event: Event) {

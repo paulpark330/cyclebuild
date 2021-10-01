@@ -11,5 +11,8 @@
   <div class="installed-part">
     <img src="{{ part.imageUrl[0] }}" alt="" />
     <span>{{ part.name }}</span>
+    <mat-icon (click)="deletePart(part._id)" class="delete-button" style="color: #f55757"
+      >highlight_off</mat-icon
+    >
   </div>
 </div>
