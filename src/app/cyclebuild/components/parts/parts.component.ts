@@ -16,8 +16,6 @@ export class PartsComponent implements OnInit {
   ngOnInit(): void {
     this.parts = this.partService.parts;
     this.partService.loadAll();
-    this.parts.subscribe((data) => {
-      console.log(data);
-    });
+    this.parts.subscribe();
   }
 }

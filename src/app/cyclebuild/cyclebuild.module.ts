@@ -17,6 +17,7 @@ import { BicycleDetailsComponent } from './components/bicycle-details/bicycle-de
 import { PartDetailsComponent } from './components/part-details/part-details.component';
 import { PartCarouselComponent } from './components/part-carousel/part-carousel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ModalCarouselComponent } from './components/modal-carousel/modal-carousel.component';
 
 
 const routes: Routes = [
@@ -72,7 +73,8 @@ const routes: Routes = [
     BicyclesComponent,
     BicycleDetailsComponent,
     PartDetailsComponent,
-    PartCarouselComponent
+    PartCarouselComponent,
+    ModalCarouselComponent
   ],
 })
 export class CyclebuildModule { }

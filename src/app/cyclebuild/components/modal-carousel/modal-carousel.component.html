@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <div class="main-image">
+    <img src="{{ mainImage }}" alt="" />
+  </div>
+</mat-dialog-content>
+<div class="preview-images">
+  <div (click)="switchView($event)" *ngFor="let image of imageUrl" class="preview-image">
+    <div *ngIf="mainImage !== image" class="overlay"></div>
+    <img  src="{{ image }}" alt="" />
+  </div>
+</div>
