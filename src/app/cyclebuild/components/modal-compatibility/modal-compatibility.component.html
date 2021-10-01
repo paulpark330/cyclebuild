@@ -22,8 +22,8 @@
       <mat-icon color="accent" matPrefix>search</mat-icon>
     </mat-form-field>
 
-    <div *ngIf="!input.value" class="no-input">
-      <h3>Search to Find Results</h3>
+    <div *ngIf="!input.value" class="no-result">
+      <h4>Search to Find Results</h4>
     </div>
 
     <table *ngIf="input.value" mat-table [dataSource]="dataSource">
@@ -40,11 +40,19 @@
       <ng-container matColumnDef="compatibility">
         <th *matHeaderCellDef>Compatibility</th>
         <td mat-cell *matCellDef="let bicycle">
-          <div *ngIf="checkCompatibility(bicycle, part)">
-          "true"
+          <div
+            class="table-compatibility"
+            *ngIf="checkCompatibility(bicycle, part)"
+          >
+            <mat-icon style="color: #4bd493">check_circle_outline</mat-icon>
+            <h4 style="color: #4bd493">Compatible</h4>
           </div>
-          <div *ngIf="!checkCompatibility(bicycle, part)">
-          "false"
+          <div
+            class="table-compatibility"
+            *ngIf="!checkCompatibility(bicycle, part)"
+          >
+            <mat-icon style="color: #f55757">check_circle_outline</mat-icon>
+            <h4 style="color: #f55757">Not Compatible</h4>
           </div>
         </td>
       </ng-container>
@@ -54,7 +62,10 @@
 
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">
-          No data matching the filter "{{ input.value }}"
+          <div class="no-result">
+            <h4>No Results</h4>
+            <p>Try checking your spelling or search for something else.</p>
+          </div>
         </td>
       </tr>
     </table>
