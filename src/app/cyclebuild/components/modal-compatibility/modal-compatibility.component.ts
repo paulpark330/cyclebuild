@@ -1,5 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  MatSnackBar,
+  MatSnackBarRef,
+  SimpleSnackBar,
+} from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { Bicycle } from '../../models/bicycle';
@@ -14,7 +19,9 @@ import { BicycleService } from '../../services/bicycle.service';
 export class ModalCompatibilityComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private bicycleService: BicycleService
+    private bicycleService: BicycleService,
+    public dialogRef: MatDialogRef<ModalCompatibilityComponent>,
+    private _snackBar: MatSnackBar
   ) {}
 
   part!: Part;
@@ -31,6 +38,11 @@ export class ModalCompatibilityComponent implements OnInit {
     });
     this.part = this.data.part;
   }
+  openSnackBar(message: string, action: string): MatSnackBarRef<SimpleSnackBar> {
+    return this._snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
   addToBicycle(bicycle: Bicycle, part: Part) {
     //get array of parts from local storage
@@ -43,8 +55,11 @@ export class ModalCompatibilityComponent implements OnInit {
     }
     if (!partsArray.some((partJSON) => partJSON._id === part._id)) {
       partsArray.push(part);
+      localStorage.setItem(bicycle.name, JSON.stringify(partsArray));
+      this.dialogRef.close(bicycle._id);
+    } else {
+      this.openSnackBar('Part already exists on bike', 'close');
     }
-    localStorage.setItem(bicycle.name, JSON.stringify(partsArray));
   }
 
   checkCompatibility(bicycle: Bicycle, part: Part) {

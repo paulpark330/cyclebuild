@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import {
+  MatSnackBar,
+  MatSnackBarRef,
+  SimpleSnackBar,
+} from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Part } from '../../models/part';
 import { PartService } from '../../services/part.service';
 import { ModalCompatibilityComponent } from '../modal-compatibility/modal-compatibility.component';
@@ -15,17 +20,10 @@ export class PartDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: PartService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
-
-  openDialog(event: any) {
-    this.dialog.open(ModalCompatibilityComponent, {
-      width: '800px',
-      height: '600px',
-      data: { part: this.part },
-      panelClass: 'custom-dialog-container',
-    });
-  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -34,6 +32,34 @@ export class PartDetailsComponent implements OnInit {
         if (parts.length === 0) return;
         this.part = this.service.partById(id);
       });
+    });
+  }
+
+  openSnackBar(
+    message: string,
+    action: string
+  ): MatSnackBarRef<SimpleSnackBar> {
+    return this._snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
+  openDialog(event: any) {
+    const dialogRef = this.dialog.open(ModalCompatibilityComponent, {
+      width: '800px',
+      height: '600px',
+      data: { part: this.part },
+      panelClass: 'custom-dialog-container',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.openSnackBar('Part added!', 'Navigate')
+          .onAction()
+          .subscribe(() => {
+            this.router.navigate(['cyclebuild/bicycles', result]);
+          });
+      }
     });
   }
 }

@@ -4,7 +4,9 @@
   <div class="bicycles-content">
     <div *ngFor="let bicycle of bicycles | async" class="bicycles-content">
       <div [routerLink]="['/cyclebuild/bicycles', bicycle._id]" class="bicycle">
-        <img src="{{ bicycle.imageUrl[0] }}" alt="{{ bicycle.name }}" />
+        <div class="bicycle-image-container">
+          <img src="{{ bicycle.imageUrl[0] }}" alt="{{ bicycle.name }}" />
+        </div>
         <h2>{{ bicycle.name }}</h2>
       </div>
     </div>
