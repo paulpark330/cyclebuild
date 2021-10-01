@@ -24,10 +24,15 @@
 .bicycle {
   flex-basis: 80%;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .bicycle-image-container {
   width: 100%;
+}
+
+.bicycle:hover {
+  transform: scale(1.05);
 }
 
 .bicycle img {

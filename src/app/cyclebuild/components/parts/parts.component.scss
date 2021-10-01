@@ -27,6 +27,11 @@
   align-items: center;
   cursor: pointer;
   margin-bottom: 2rem;
+  transition: 0.2s;
+}
+
+.part:hover {
+  transform: scale(1.025);
 }
 
 .part img {
