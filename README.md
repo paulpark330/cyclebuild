@@ -17,13 +17,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 # API Documentation
 
-Used to collect a Token for a registered User.
+## All Bicycles
+
+Get the details of all bicycles.
 
 **URL** : `/api/bicycle`
 
 **Method** : `GET`
 
-## Success Response
+### Success Response
 
 **Code** : `200 OK`
 
@@ -72,6 +74,44 @@ Used to collect a Token for a registered User.
         "name": "Bicycle D"
     }
 ]
-
 ```
 
+## Single Bicycle
+
+Get the details of a single bicycle.
+
+**URL** : `/api/bicycle/{id}`
+
+**Method** : `GET`
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+{
+    "__v": 0,
+    "_id": "629a52e202bdafa1a8282816",
+    "imageUrl": [
+        "/assets/bicycle-b-1.png",
+        "/assets/bicycle-b-2.png",
+        "/assets/bicycle-b-3.png"
+    ],
+    "name": "Bicycle D"
+}
+```
+### Error Response
+
+**Code** : `404 NOT FOUND`
+
+**Content** :
+
+```json
+{
+    "error": "Not Found",
+    "message": "Bicycle was not found.",
+    "statusCode": 404
+}
+```
