@@ -13,3 +13,65 @@ Run `npm start` to initialize database and local server.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+# API Documentation
+
+Used to collect a Token for a registered User.
+
+**URL** : `/api/bicycle`
+
+**Method** : `GET`
+
+## Success Response
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+[
+    {
+        "__v": 0,
+        "_id": "629a52e202bdafa1a8282813",
+        "imageUrl": [
+            "/assets/bicycle-a-1.png",
+            "/assets/bicycle-a-2.png",
+            "/assets/bicycle-a-3.png"
+        ],
+        "name": "Bicycle A"
+    },
+    {
+        "__v": 0,
+        "_id": "629a52e202bdafa1a8282814",
+        "imageUrl": [
+            "/assets/bicycle-b-1.png",
+            "/assets/bicycle-b-2.png",
+            "/assets/bicycle-b-3.png"
+        ],
+        "name": "Bicycle B"
+    },
+    {
+        "__v": 0,
+        "_id": "629a52e202bdafa1a8282815",
+        "imageUrl": [
+            "/assets/bicycle-a-1.png",
+            "/assets/bicycle-a-2.png",
+            "/assets/bicycle-a-3.png"
+        ],
+        "name": "Bicycle C"
+    },
+    {
+        "__v": 0,
+        "_id": "629a52e202bdafa1a8282816",
+        "imageUrl": [
+            "/assets/bicycle-b-1.png",
+            "/assets/bicycle-b-2.png",
+            "/assets/bicycle-b-3.png"
+        ],
+        "name": "Bicycle D"
+    }
+]
+
+```
+
