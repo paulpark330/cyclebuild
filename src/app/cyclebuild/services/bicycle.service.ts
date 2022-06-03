@@ -24,7 +24,7 @@ export class BicycleService {
   }
 
   loadAll() {
-    const bicyclesUrl = 'http://localhost:3000/bicycle';
+    const bicyclesUrl = 'http://localhost:3000/api/bicycles';
     return this.http.get<Bicycle[]>(bicyclesUrl).subscribe(
       (data) => {
         this.dataStore.bicycles = data;

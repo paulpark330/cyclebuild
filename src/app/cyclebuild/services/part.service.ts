@@ -24,7 +24,7 @@ export class PartService {
   }
 
   loadAll() {
-    const partsUrl = 'http://localhost:3000/part';
+    const partsUrl = 'http://localhost:3000/api/parts';
     return this.http.get<Part[]>(partsUrl).subscribe((data) => {
       this.dataStore.parts = data;
       this._parts.next(Object.assign({}, this.dataStore).parts)

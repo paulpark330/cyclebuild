@@ -1,4 +1,4 @@
-require('./schema')
+require("./schema");
 const Joi = require("joi");
 const Mongoose = require("mongoose");
 
@@ -8,7 +8,7 @@ const Bicycle = Mongoose.model("Bicycle");
 module.exports = [
   {
     method: "GET",
-    path: "/bicycle",
+    path: "/api/bicycles",
     handler: async (request, h) => {
       try {
         const bicycle = await Bicycle.find().exec();
@@ -21,19 +21,28 @@ module.exports = [
   },
   {
     method: "GET",
-    path: "/bicycle/{id}",
+    path: "/api/bicycles/{id}",
     handler: async (request, h) => {
       try {
         const bicycle = await Bicycle.findById(request.params.id).exec();
+        if (!bicycle) {
+          const error = {
+            error: "Not Found",
+            message: "Bicycle was not found.",
+            statusCode: 404,
+          };
+          return h.response(error).code(404);
+        }
         return h.response(bicycle);
       } catch (error) {
+        console.log(error);
         return h.response(error).code(500);
       }
     },
   },
   {
     method: "GET",
-    path: "/part",
+    path: "/api/parts",
     handler: async (request, h) => {
       try {
         const part = await Part.find().exec();
@@ -45,10 +54,18 @@ module.exports = [
   },
   {
     method: "GET",
-    path: "/part/{id}",
+    path: "/api/parts/{id}",
     handler: async (request, h) => {
       try {
         const part = await Part.findById(request.params.id).exec();
+        if (!part) {
+          const error = {
+            error: "Not Found",
+            message: "Part was not found.",
+            statusCode: 404,
+          };
+          return h.response(error).code(404);
+        }
         return h.response(part);
       } catch (error) {
         return h.response(error).code(500);
@@ -57,7 +74,7 @@ module.exports = [
   },
   {
     method: "PUT",
-    path: "/part/{id}",
+    path: "/api/parts/{id}",
     options: {
       validate: {
         payload: Joi.object({
