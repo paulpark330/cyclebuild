@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
+Run `npm i` to install all the necessary packages and dependencies. 
+
 ## MongoDB server
 
 Refer to this website for [MongoDB Installation Tutorial](https://www.mongodb.com/docs/manual/installation/?_ga=2.32940920.712864826.1654279176-919443297.1654279175).
