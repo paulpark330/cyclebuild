@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## MongoDB server
 
-Refer to this website for [MongoDB Installation Tutorial] (https://www.mongodb.com/docs/manual/installation/?_ga=2.32940920.712864826.1654279176-919443297.1654279175).
+Refer to this website for [MongoDB Installation Tutorial](https://www.mongodb.com/docs/manual/installation/?_ga=2.32940920.712864826.1654279176-919443297.1654279175).
 
 Run `npm start` to initialize database and local server. 
 
